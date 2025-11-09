@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width,initial-scale=1" />
+ <title>Play Mindustry — Web Portal</title>
+ <meta name="description" content="Play Mindustry in-browser, download links, and information." />
+ <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ <header class="site-header">
+ <div class="container">
+ <a class="brand" href="#" aria-label="Mindustry Portal">Mindustry Portal</a>
+ <nav class="nav">
+ <a href="#about">About</a>
+ <a href="#play">Play</a>
+ <a href="#download">Download</a>
+ </nav>
+ </div>
+ </header>
+
+ <main>
+ <section class="hero">
+ <div class="container hero-grid">
+ <div>
+ <h1>Mindustry — Tower defense meets factory automation</h1>
+ <p class="lead">Play the official web build in-browser, or download native versions. If your network blocks the web build, use the download links below.</p>
+ <div class="cta-row">
+ <button id="play-button" class="btn primary">Play in browser</button>
+ <a class="btn ghost" href="#download">Download</a>
+ </div>
+ </div>
+
+ <div class="card stats">
+ <h3>Quick Links</h3>
+ <ul>
+ <li><a id="official-web-link" href="https://mindustrygame.github.io/" target="_blank" rel="noopener">Official Web Build</a></li>
+ <li><a href="https://anuke.itch.io/mindustry" target="_blank" rel="noopener">Itch.io (download)</a></li>
+ <li><a href="https://play.google.com/store/apps/details?id=io.anuke.mindustry" target="_blank" rel="noopener">Google Play</a></li>
+ <li><a href="https://apps.apple.com/app/mindustry/id1385258906" target="_blank" rel="noopener">App Store</a></li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <section id="about" class="container about">
+ <h2>About</h2>
+ <p>Mindustry is an open-source-ish tower-defense / factory automation hybrid. This portal offers a simple way to launch the web build in a modal iframe, links to downloads, and a tiny troubleshooting checklist if the game won't load in your browser.</p>
+
+ <div class="grid">
+ <article>
+ <h3>How to play</h3>
+ <ol>
+ <li>Click <strong>Play in browser</strong>.</li>
+ <li>If the game doesn't appear, follow the troubleshooting steps below.</li>
+ <li>Prefer an offline build? Use the download links in the Download section.</li>
+ </ol>
+ </article>
+
+ <article>
+ <h3>Troubleshooting</h3>
+ <ul>
+ <li>If the embed stays blank, your network may block the remote site or the site disallows iframes. Click the official web link to open the game in a new tab.</li>
+ <li>Consider using a trusted VPN if your network restricts gaming sites (check policies of the network owner before using).</li>
+ <li>For best performance, use Chrome, Edge, or Firefox and enable hardware acceleration.</li>
+ </ul>
+ </article>
+ </div>
+ </section>
+
+ <section id="play" class="container play-section">
+ <h2>Play (embed)</h2>
+ <p>Click <strong>Play in browser</strong> to open the web build in a modal. If the embed is blocked, a direct link is provided.</p>
+
+ <div class="embed-preview">
+ <button id="play-embed-small" class="btn">Open Play Modal</button>
+ <p class="muted">Or open the official site in a new tab: <a href="https://mindustrygame.github.io/" target="_blank" rel="noopener">Open Mindustry (official)</a></p>
+ </div>
+ </section>
+
+ <section id="download" class="container download">
+ <h2>Download</h2>
+ <p>Native downloads and alternative mirrors.</p>
+
+ <div class="download-grid">
+ <div class="card">
+ <h3>Web build</h3>
+ <p>Runs in most modern browsers.</p>
+ <a class="btn" href="https://mindustrygame.github.io/" target="_blank" rel="noopener">Open web build</a>
+ </div>
+
+ <div class="card">
+ <h3>Itch.io</h3>
+ <p>Official itch.io page with desktop builds & source info.</p>
+ <a class="btn" href="https://anuke.itch.io/mindustry" target="_blank" rel="noopener">Go to Itch.io</a>
+ </div>
+
+ <div class="card">
+ <h3>Mobile</h3>
+ <p>Android and iOS releases.</p>
+ <div class="buttons-row">
+ <a class="btn" href="https://play.google.com/store/apps/details?id=io.anuke.mindustry" target="_blank" rel="noopener">Google Play</a>
+ <a class="btn" href="https://apps.apple.com/app/mindustry/id1385258906" target="_blank" rel="noopener">App Store</a>
+ </div>
+ </div>
+ </div>
+ </section>
+ </main>
+
+ <footer class="site-footer">
+ <div class="container">
+ <small>Made for personal use — links point to external sites. This portal does not host the game files.</small>
+ </div>
+ </footer>
+
+ <!-- Modal for embedding the web build -->
+ <div id="game-modal" class="modal" aria-hidden="true" role="dialog" aria-label="Mindustry game modal">
+ <div class="modal-content">
+ <button id="close-modal" class="modal-close" aria-label="Close">✕</button>
+ <div class="iframe-wrapper" id="iframe-wrapper">
+ <!-- iframe will be inserted by script.js -->
+ </div>
+ <div id="modal-fallback" class="modal-fallback" hidden>
+ <p>If the game iframe does not load, open the official site in a new tab:</p>
+ <a class="btn" id="fallback-link" href="https://mindustrygame.github.io/" target="_blank" rel="noopener">Open Mindustry (official)</a>
+ </div>
+ </div>
+ </div>
+
+ <script src="script.js" defer></script>
+</body>
+</html>
